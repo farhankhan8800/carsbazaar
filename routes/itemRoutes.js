@@ -7,7 +7,7 @@ const {
 
 const router = express.Router();
 
-router.get("/", getItems); // GET route
+router.get("/", getItems); // GET routee
 router.post("/", createItem); // POST route
 router.put("/:id/availability", updateItemAvailability); // Update
 
