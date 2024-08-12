@@ -4,8 +4,9 @@ const connectDB = async () => {
   try {
     // await mongoose.connect("mongodb://localhost:27017/carsbazar");
     await mongoose.connect(
-      "mongodb+srv://farhan:Me%40Engineer123@cluster0-carsbazar.fvswv.mongodb.net/"
+      "mongodb+srv://farhan:Me%40Engineer123@cluster0-carsbazar.fvswv.mongodb.net/carsbazar?retryWrites=true&w=majority"
     );
+
     console.log("Connected to MongoDB");
   } catch (err) {
     console.error("Failed to connect to MongoDB", err);
