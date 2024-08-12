@@ -15,14 +15,17 @@ const createItem = async (req, res) => {
 
 const getItems = async (req, res) => {
   try {
+    // Fetch all items from the database
     const items = await Item.find();
-    // Successful response
+    console.log("items", items);
+    // Send successful response
     sendResponse(res, 200, true, "Items fetched successfully", items);
   } catch (err) {
-    // Error response
+    // Send error response
     sendResponse(res, 500, false, "Failed to fetch items", null, err.message);
   }
 };
+
 const updateItemAvailability = async (req, res) => {
   const itemId = req.params.id; // URL se item ka ID lo
   console.log("Item ID:", itemId); // Log the item ID
